@@ -17,7 +17,26 @@ public class detectCollision : MonoBehaviour
 
     {
 
-        Debug.Log("We hit trigger!!! - " + trigger.gameObject.name);
+       // Debug.Log("We hit trigger!!! - " + trigger.gameObject.name);
+
+        if(trigger.gameObject.CompareTag("Package"))
+        {
+
+            Debug.Log("I have picked up a package!");
+
+
+        }
+
+
+        if (trigger.gameObject.CompareTag("Customer"))
+        {
+
+
+            Debug.Log("I have deliver package!");
+
+
+        }
+
 
 
     }
