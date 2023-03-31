@@ -19,12 +19,13 @@ public class detectCollision : MonoBehaviour
 
        // Debug.Log("We hit trigger!!! - " + trigger.gameObject.name);
 
-        if(trigger.gameObject.CompareTag("Package"))
+        if(trigger.gameObject.CompareTag("Package") && !hasPackage)
         {
 
             Debug.Log(">>>>>picked up a package!");
 
             hasPackage = true;
+          Destroy(trigger.gameObject, 0.5f);
 
 
         }
