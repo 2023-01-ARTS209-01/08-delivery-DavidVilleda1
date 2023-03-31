@@ -51,6 +51,7 @@ public class detectCollision : MonoBehaviour
 
 
             Debug.Log("<<<<<<delivered package!");
+            spriteRenderer.color = doesNotHavePackageColor;
 
             hasPackage = false;
         }
