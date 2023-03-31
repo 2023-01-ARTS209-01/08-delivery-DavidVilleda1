@@ -7,6 +7,20 @@ public class detectCollision : MonoBehaviour
 
     private bool hasPackage = false;
 
+
+    [SerializeField] SpriteRenderer spriteRenderer;
+    [SerializeField] Color hasPackageColor;
+    [SerializeField] Color doesNotHavePackageColor;
+
+    private void Start()
+
+    {
+
+
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
+
     private void OnCollisionEnter2D(Collision2D collision)
 
     {
@@ -25,6 +39,7 @@ public class detectCollision : MonoBehaviour
             Debug.Log(">>>>>picked up a package!");
 
             hasPackage = true;
+            spriteRenderer.color = hasPackageColor;
           Destroy(trigger.gameObject, 0.5f);
 
 
