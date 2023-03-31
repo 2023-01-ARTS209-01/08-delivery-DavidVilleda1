@@ -5,7 +5,7 @@ using UnityEngine;
 public class detectCollision : MonoBehaviour
 {
 
-
+    private bool hasPackage = false;
 
     private void OnCollisionEnter2D(Collision2D collision)
 
@@ -22,19 +22,21 @@ public class detectCollision : MonoBehaviour
         if(trigger.gameObject.CompareTag("Package"))
         {
 
-            Debug.Log("I have picked up a package!");
+            Debug.Log(">>>>>picked up a package!");
+
+            hasPackage = true;
 
 
         }
 
 
-        if (trigger.gameObject.CompareTag("Customer"))
+        if (trigger.gameObject.CompareTag("Customer")&& hasPackage)
         {
 
 
-            Debug.Log("I have deliver package!");
+            Debug.Log("<<<<<<delivered package!");
 
-
+            hasPackage = false;
         }
 
 
